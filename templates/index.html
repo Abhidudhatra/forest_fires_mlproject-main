@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/predict.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.12.1.min.js') }}"></script>
+</head>
+<body>
+    <div class="page">
+        <img src="{{ url_for('static', filename='image/forest3.jpg') }}">
+        <center>
+            <div class="main">
+                <h1>FOREST FIRE PREDICTION</h1>
+                <form action="{{ url_for('predict_datapoint') }}" method="post">    
+                    <div class="data">
+                        <p class="heading"><b> Fire Prediction</b></p>
+                        <div class="input_unit">
+                            <div class="di">
+                                <label>Temperature</label>
+                                <center><input id="i1" type="number" placeholder="Temperature" name="Temperature" required></center>
+                            </div>
+                            <div class="di">
+                                <label>RH</label>
+                                <center><input id="i2" type="number" placeholder="RH" min="0" name="RH" required></center>
+                            </div>
+                            <div class="di">
+                                <label>Ws</label>
+                                <center><input id="i3" type="number" placeholder="Ws" min="0" name="Ws" required></center>
+                            </div>
+                            <div class="di">
+                                <label>Rain</label>
+                                <center><input id="i4" type="number" placeholder="Rain" min="0" name="Rain" required></center>
+                            </div>
+                            <div class="di">
+                                <label>FFMC</label>
+                                <center><input id="i5" type="number" placeholder="FFMC" min="0" name="FFMC" required></center>
+                            </div>
+                            <div class="di">
+                                <label>DMC</label>
+                                <center><input id="i6" type="number" placeholder="DMC" min="0" name="DMC" required></center>
+                            </div>
+                            <div class="di">
+                                <label>ISI</label>
+                                <center><input id="i7" type="number" placeholder="ISI" min="0" name="ISI" required></center>
+                            </div>
+                            <div class="di">
+                                <label>Classes</label>
+                                <center><input id="i8" type="number" placeholder="Classes" min="0" name="Classes" required></center>
+                            </div>
+                            <div class="di" id="d1">
+                                <label>Region</label>
+                                <center><input id="i9" type="number" placeholder="Region" min="0" name="Region" required></center>
+                            </div>
+                         
+                        </div>
+                        <input type="submit" class="bt" value="Predict" style="margin-top: 10px; margin-bottom: 20px; background-color: rgb(201, 171, 38); border: 2px solid white; border-radius: 25px;">     
+                    </div>
+                </form>
+                <p style="margin-top: 15px; opacity: 1;" class="p"><b>PREDICTION:-</b></p>
+                <div class="ans" style="opacity: 1;">
+                    <p id="res"></p>
+                </div>
+            </div>
+        </center>
+    </div>
+    <script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+</body>
+</html>
